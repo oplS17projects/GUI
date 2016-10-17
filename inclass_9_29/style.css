@@ -1,0 +1,66 @@
+/*
+Name: Chuong Vu
+Email: Chuong_Vu@student.uml.edu
+Major: Computer Science
+School: University of Massachusetts Lowell
+Course: 91.61 GUI Programming I
+Date: 9/29/2016
+In Class Excercise
+*/
+
+/*for body, set font and letter space*/
+body {
+	font-size: 80%;
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: 0.15em;	
+	background-color: white;
+}
+/* class page for box (div)*/
+#page {
+	max-width: 940px;
+	min-width: 720px;
+	padding: 20px;
+	margin: 10px auto 10px auto;
+	border: 3px double black;
+}
+/*  logo class, set margin auto and 
+width 150px same side of the image*/
+#logo {
+	width: 150px;
+	margin: 10px auto 25px auto;
+}
+
+/* Set link space between each link (padding 15px)*/
+ul{
+	padding: 15px;
+	width: 570px;
+	margin: 0px auto 0px auto;
+	border-top: 2px solid black;
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+
+li {
+	display: inline;
+	margin: 0px 3px;
+}
+
+/* For font navigation all uppercase*/
+a {
+	color: black;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 6px 18px 5px 18px;
+}
+
+/* piano picture, ceter and width */
+p {
+	width: 600px; 
+	text-align: center;
+	margin: 20px auto 20px auto; 
+}
+
+/*Change color when mouse on*/
+a:hover, a.on {
+	color: red;
+	background-color: white;}

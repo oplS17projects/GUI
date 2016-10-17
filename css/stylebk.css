@@ -1,0 +1,135 @@
+/* For website body with defaul font */
+body {
+	background-image: url("http://weblab.cs.uml.edu/~cvu/img/bgpattern.jpg");
+	color: white;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 16px;
+}
+
+/* use for main div tag. Set the main dive as center */
+#wrapper {
+	width: 70%;
+	min-width: 700px;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/* For logo font Chuong Vu */
+@font-face {
+  font-family: "LogoFont";
+  src: url("http://weblab.cs.uml.edu/~cvu/fonts/logo.ttf");
+}
+
+/* for logo with custom font*/
+#logo { 
+	font-family: LogoFont;
+	font-size: 20px;
+	color: #39e600;
+	text-transform: uppercase;
+}
+
+/* space between maindiv and menu */
+#maindiv, #menu , #footer{
+	margin: 10px;
+}
+
+
+/* For top border green line */
+#maindiv {
+	border-top: 5px solid lawngreen;
+	width: 100%;
+}
+
+/* for image be at center in div */
+#image-container {
+  	width: 20%;
+  	float:left;
+	padding: 15px;
+}
+
+/* size of image and border */
+#image-container img {
+	width: 100%;
+	border: 1px solid red;
+}
+
+/* Top and bottom line with center text */
+#menu{
+	border-top: 2px solid red;
+	border-bottom: 2px solid red;
+	text-align: center;
+}
+
+/* set list in line */
+#menu li{
+	display: inline;
+}
+/* set text UpperCase and white color */
+#menu a{
+	color: White;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 6px 18px 5px 18px;
+}
+
+/* change color when mouse is over */
+#menu a:hover {
+	color: red;
+}
+
+/* conent on left in div */
+#content{
+	padding: 1px 20px 20px 20px;
+	margin-left: 190px;
+	padding-left: 30px;
+}
+
+/* for hobbies column */
+#content .colleft {
+	float: left;
+	margin-left: 10px;
+}
+
+/* for Assignemnt column */
+#content .colright {
+	float: left;
+	margin-left: 100px;
+}
+
+/* image on list style assignment */
+#arrow {
+	list-style-image: url("http://weblab.cs.uml.edu/~cvu/img/navi.png");
+	list-style-position: inside;
+	padding: 2px;
+}
+
+
+/* for footer use only */
+#footer {
+	font-style: italic;
+	margin: auto;
+}
+
+/* For make div in stay in order*/
+.clear{
+	clear: both;
+}
+
+/* modified space between paragraph and undored list*/
+p + ul {
+	margin-top: -10px;
+}
+
+/* For font navigation all uppercase*/
+a {
+	color: white;
+	text-decoration: none;
+}
+
+/* color change red on Assignments */
+a:hover {
+	color: red;
+}
