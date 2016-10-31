@@ -1,0 +1,63 @@
+/* background color tag */
+body{
+    background-color: #A4FA97;
+}
+
+/* For Main div with red color border */
+.main {
+    margin-left: 10px;
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #800303;
+}
+
+/* For Back To Home tag */
+.link {
+    float: right;
+}
+
+/* Table output */
+#table {
+    max-width: 5%;
+    padding: 10px;
+    margin: 0 auto;
+    float: left;
+}
+/* Table's style */
+#style-table {
+    border-spacing: 1px;
+    width: 100%;
+    empty-cells: hide;
+}
+
+/* First Row and Column Color */
+td.first {
+    background-color: black;
+    color: #FFF;
+    border: #FFF 1px thin;
+    padding: 10px;
+    text-align: center;
+    font-size: 12pt;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+/* Rest Cell in table */
+td.rest {
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px;
+    width: 10px;
+    height: 10px;
+    font-size: 12pt;
+}
+
+/* for footer use only */
+#footer {
+    font-style: italic;
+    margin: auto;
+}
+
+/* For make div in stay in order*/
+.clear{
+    clear: both;
+}
