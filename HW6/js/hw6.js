@@ -1,3 +1,4 @@
+// Copyright Chuong Vu
 // Function call from Submit button
 // it will get input from the html and passes the value
 // to the checkvalidform function and then if the
