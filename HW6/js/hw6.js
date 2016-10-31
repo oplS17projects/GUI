@@ -35,7 +35,7 @@ function checkvalidform(fCol, lCol, fRow, lRow){
     
     // define and declare variable for errorMessage tag and set it is empty
     var errorMess = "";
-    
+
     // Check minimum column input
     // check if it is empty string
     if (fCol == "") {
@@ -65,7 +65,7 @@ function checkvalidform(fCol, lCol, fRow, lRow){
         colError2 = true;
         errorMess += "'Max Column' value must be an integer<br>";
     }
-    
+
     // Check minimum row input
     // check if it is empty string
     if (fRow == "") {
@@ -95,7 +95,7 @@ function checkvalidform(fCol, lCol, fRow, lRow){
         rowError2 = true;
         errorMess += "'Max Row' value must be an integer<br>";
     }
-    
+
     // Check the max value bigger than min value for Column
     if (Number(fCol) % 1 == 0 && Number(lCol) % 1 == 0){
         //console.log("%O,  %O" ,fCol, lCol);
@@ -106,7 +106,7 @@ function checkvalidform(fCol, lCol, fRow, lRow){
             valError1 = false;
         }
     }
-    
+
     // Check the max value bigger than min value for Row
     if (Number(fRow) % 1 == 0 && Number(lRow) % 1 == 0){
         //console.log("%O,  %O" ,fCol, lCol);
@@ -117,7 +117,7 @@ function checkvalidform(fCol, lCol, fRow, lRow){
             valError2 = false;
         }
     }
-    
+
     // or logical to return true or false
     if (colError1 || colError2 || rowError1 || rowError2 || valError1 || valError2 == true){
         // print out the Error Message
@@ -134,10 +134,10 @@ function tableCreate(fCol, lCol, fRow, lRow) {
     lCol = Number(lCol);    
     fRow = Number(fRow);    
     lRow = Number(lRow);    
-    
+
     // define and declare variable for CreateTable tag and set it is empty
     var CreateTable = "";
-    
+
     CreateTable += "<table id='style-table'>";
     // console.log('fRow: %O', fRow);        // For debug in Console
     // create table with rows based on input
