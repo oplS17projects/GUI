@@ -122,13 +122,14 @@ function checkvalidform(fCol, lCol, fRow, lRow){
     // or logical to return true or false
     if (colError1 || colError2 || rowError1 || rowError2 || valError1 || valError2 == true){
         // print out the Error Message
-        document.getElementById('errorMessage').innerHTML = "<br>" + errorMess;
+        document.getElementById('errorMessage').innerHTML = "<br><font color=#FF0000> Error Detected:</font><br>" + errorMess;
         return false;
     } else {
         return true;
     }
 }   
 
+// function to create dynamic table based on input from the users after passes the valid check
 function tableCreate(fCol, lCol, fRow, lRow) {  
     // cast all variable to Number for calculation to print out the dynamic table
     fCol = Number(fCol);
