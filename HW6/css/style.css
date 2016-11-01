@@ -44,7 +44,7 @@ td.header {
     font-family: 'Julius Sans One', sans-serif;
 }
 
-/* Rest Cell in table */
+/* Child with blank color in table */
 td.child-blank {
     text-align: center;
     border: 2px solid black;
@@ -54,7 +54,7 @@ td.child-blank {
     font-size: 12pt;
 }
 
-/* Rest Cell in table */
+/* Child with background color in table */
 td.child-color {
     text-align: center;
     border: 2px solid black;
