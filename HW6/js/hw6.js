@@ -1,5 +1,6 @@
-// Copyright Chuong Vu
-// Function call from Submit button
+// Copyright @ Chuong Vu
+// Email: Chuong_Vu@student.uml.edus
+// Function call from Submit button to create Dynamic Table
 // it will get input from the html and passes the value
 // to the checkvalidform function and then if the
 // checkvalidform return true, the dynamic table will be created
@@ -139,7 +140,8 @@ function tableCreate(fCol, lCol, fRow, lRow) {
 
     // define and declare variable for CreateTable tag and set it is empty
     var CreateTable = "";
-
+    // check variable use for determine when is the cell have background corlor or not
+    var check = 0;  
     CreateTable += "<table id='style-table'>";
     // console.log('fRow: %O', fRow);        // For debug in Console
     // create table with rows based on input
@@ -151,16 +153,21 @@ function tableCreate(fCol, lCol, fRow, lRow) {
             // console.log('Column: %O', col);   // For debug in Console
             // console.log('Row: %O', row);      // For debug in Console
             // if the cell is on first row and first column, empty space, else css style will be first
-            if(row == 0){
-                CreateTable += "<td class='first'>" + ((col == 0) ? "" : (col + fCol - 1)) + "</td>";
+            if (row == 0){
+                CreateTable += "<td class='header'>" + ((col == 0) ? "" : (col + fCol - 1)) + "</td>";
             // if cell fall in first column, css style will be first
             } else if (col == 0){
-                CreateTable += "<td class='first'>" + (row + fRow - 1) + "</td>";
+                CreateTable += "<td class='header'>" + (row + fRow - 1) + "</td>";
             // the rest of cell in the table with rest style
             } else {
-                CreateTable += "<td class='rest'>" + ((row + fRow - 1) * (col + fCol - 1)) + "</td>";
+                // cell background based on check variable
+                CreateTable += ((Number(check) % 2 == 0) ? "<td class='child-blank'>"  : "<td class='child-color'>") + ((row + fRow - 1) * (col + fCol - 1)) + "</td>";
+                // increase check by 1
+                check++;
             }
         }
+        // reset check based on row to determind 0 or 1
+        row % 2 == 0 ? check = 0 : check = 1;
         // closed row tag
         CreateTable += "</tr>";
     }
