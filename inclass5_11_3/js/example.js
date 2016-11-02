@@ -27,7 +27,7 @@ list.insertBefore(startItem, list.firstChild);
 
 // ADD A CLASS OF COOL TO ALL LIST ITEMS
 // get list li child from the document
-var iTemsList = document.querySelectorAll('li');
+var iTemsList = document.getElementsByTagName('li');
 // add/replace current class to 'cool' class based on number of <li> element
 for (var i = 0; i < iTemsList.length; i++) {
     iTemsList[i].className = 'cool';
