@@ -9,9 +9,11 @@ body{
 /* For Main div with red color border */
 .main {
     margin-left: 10px;
-    width: 80%;
+    max-width: 600px;
+    min-width: 20%;
     padding: 10px;
     border: 1px solid #800303;
+    background-color: #B8F1F0;
 }
 
 /* For Back To Home tag */
