@@ -2,7 +2,7 @@
 // Email: Chuong_Vu@student.uml.edu
 
 // ADD NEW ITEM TO END OF LIST
-// get the first element in ul array tag
+// get the list of element in ul tag
 var list = document.getElementsByTagName('ul')[0];
 // create new li element
 var endItem = document.createElement('li');
@@ -34,9 +34,9 @@ for (var i = 0; i < iTemsList.length; i++) {
 }
 
 // ADD NUMBER OF ITEMS IN THE LIST TO THE HEADING
-// get the locate h2 tag for heading
-var heading = document.querySelector('h2');
-// Get heading text
-var headingText = heading.firstChild.nodeValue;
+// get to the h2 tag
+var heading = document.getElementsByTagName('h2')[0];
+// Get text inside the h2 tag
+var headingText = heading.innerHTML;
 // add number of items to heading
 heading.innerHTML = headingText + "<span>" + iTemsList.length + "</span>";
