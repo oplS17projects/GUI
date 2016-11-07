@@ -1,0 +1,45 @@
+/* use for body with green background and height control */
+body.imgbg{
+	background-color: #BEF7C5;
+	line-height: 1.2;
+}
+
+/* use for main div tag */
+.divmain {
+	margin-left: 10px;
+}
+
+/* use for picture inside div */
+.divpic {
+	float: left;
+	display: block;
+	border: 1px solid red;
+}
+
+/* this tag use for resize the image div */
+.divpic img {
+	max-width: 100%;
+	margin: auto;
+	display: block;
+}
+
+/* for content in div */
+.divtext {
+    margin-left: 220px
+}
+
+/* for footer use only */
+.footer {
+	position: absolute;
+	font-style: italic;
+	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	padding: 1rem;
+}
+
+/* modified space between paragraph and undored list*/
+p + ul {
+	margin-top: -10px;
+}
+
