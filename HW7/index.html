@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<!--
+    Name: Chuong Vu
+    Email: Chuong_Vu@student.uml.edu
+    Date: 11/15/2016
+    Major: Computer Science
+    School: University of Massachesetts Lowell
+    Course: 91.61 GUI Programming I
+    Link: http://weblab.cs.uml.edu/~cvu/HW7/index.html
+    css: http://weblab.cs.uml.edu/~cvu/HW7/css/style.css
+    Javascript: http://weblab.cs.uml.edu/~cvu/HW7/js/hw7.js
+    Description: Assignment 7 - Using the jQuery Validation Plugin with Your Dynamic Table
+    Copyright @ 2016 Chuong Vu - 91.61 GUI Programming I
+-->
+
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dynamic Multiplication Table</title>
+        <!-- stylesheets -->
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <div class="main">
+            <!-- User input form with Error tag message -->
+            <form id="input-form">
+                <h2>Dynamic Multiplication Table</h2>
+                Please enter 4 numbers <b>[Range From -100 To 100]</b> to the fields belows, then press "Submit" button to create a Dynamic Multiplication Table.<br>
+                
+                <p><b>Verital Columns</b><br>Min Value: <input type="text" id="fCol" name="fCol" placeholder="Min Column" size="10" value=""></p>
+                <p>Max Value: <input type="text" id="lCol" name="lCol" placeholder="Max Column" size="10" value=""></p>
+
+                <p><b>Horizontal Rows</b> <br>Min Value: <input type="text" id="fRow" name="fRow" placeholder="Min Row" size="10" value=""></p>
+                <p>Max Value: <input type="text" id="lRow" name="lRow" placeholder="Max Row" size="10" value="" ></p>
+             
+                <!--Submit Button-->
+                <input type="submit" id="submit" value="Submit" />
+                
+                <!-- Link back to Homepage -->
+                <a href="../index.html" class="link">Back To Home</a>
+                
+                <!-- Error Meaage Output -->
+                <div id='errorMessage'></div>
+
+            </form>
+        </div>
+        <!-- Table output -->
+        <div id='table'></div>
+
+        <br><br>
+        <!--Display footer-->
+        <div class="clear"></div>
+        <div id="footer">
+            <p>Copyright &copy; 2016 Chuong Vu - 91.61 GUI Programming I</p>
+            <!-- W3C valid html5 and css3 -->
+            <p>
+                <a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fweblab.cs.uml.edu%2F~cvu%2FHW7%2Findex.html&profile=css3&usermedium=all&warning=1&vextwarning=&lang=en"><img style="border:0;width:88px;height:31px" src="img/valid-css.png" alt="Valid CSS!"></a> 
+                <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fweblab.cs.uml.edu%2F~cvu%2FHW7%2Findex.html"><img style="border:0;width:88px;height:31px" src="img/html5-courses.png" alt="Valid HTML5"></a>
+            </p>
+        </div>
+	<!-- jQuery -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+	<!-- jQuery Validation plugin -->
+    <script src="js/jquery.validate.js"></script>
+    <!--load javascript file-->
+    <script type="text/javascript" src="js/hw7.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+/* Copyright @ Chuong Vu */
+/* Email: Chuong_Vu@student.uml.edu */
+
+/* background color tag */
+body{
+    background-color: #A4FA97;
+}
+
+/* For Main div with red color border */
+.main {
+    margin-left: 10px;
+    max-width: 600px;
+    min-width: 20%;
+    padding: 10px;
+    border: 1px solid #800303;
+    background-color: #B8F1F0;
+}
+
+/* For Back To Home tag */
+.link {
+    float: right;
+}
+
+/* Table output */
+#table {
+    max-width: 5%;
+    padding: 10px;
+    margin: 0 auto;
+    float: left;
+}
+/* Table's style */
+#style-table {
+    border-spacing: 1px;
+    width: 100%;
+    empty-cells: hide;
+}
+
+/* First Row and Column Color */
+td.header {
+    background-color: black;
+    color: #FFF;
+    border: #FFF 2px thin;
+    padding: 10px;
+    text-align: center;
+    font-size: 12pt;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+/* Child with blank color in table */
+td.child-blank {
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px;
+    width: 12px;
+    height: 12px;
+    font-size: 12pt;
+}
+
+/* Child with background color in table */
+td.child-color {
+    text-align: center;
+    border: 2px solid black;
+    background-color: #FC886F;
+    padding: 10px;
+    width: 12px;
+    height: 12px;
+    font-size: 12pt;
+}
+
+/* for footer use only */
+#footer {
+    font-style: italic;
+    margin: auto;
+}
+
+/* For make div in stay in order*/
+.clear{
+    clear: both;
+}
+
+/* for jQuery plugin generates error */
+.error {
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+}
