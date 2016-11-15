@@ -14,108 +14,107 @@
 
 // Check to make sure the page ready
 $().ready(function () {
-	
-	// Valid function to check the input is smaller or grader based on the source example
-	// Source: http://jsfiddle.net/tUPQc/2/
-	// Function to check greater which is use in rules for validate
-	$.validator.addMethod("greaterThan",
-		function (value, element, param) {
-			var $min = $(param);
-			if (this.settings.onfocusout) {
-				$min.off(".validate-greaterThan").on("blur.validate-greaterThan", function () {
-					$(element).valid();
-				});
-			}
-			return parseInt(value) > parseInt($min.val());
-	}, " Max must be greater than min");
+    
+    // Valid function to check the input is smaller or grader based on the source example
+    // Source: http://jsfiddle.net/tUPQc/2/
+    // Function to check greater which is use in rules for validate
+    $.validator.addMethod("greaterThan",
+        function (value, element, param) {
+            var $min = $(param);
+            if (this.settings.onfocusout) {
+                $min.off(".validate-greaterThan").on("blur.validate-greaterThan", function () {
+                    $(element).valid();
+                });
+            }
+            return parseInt(value) > parseInt($min.val());
+    }, " Max must be greater than min");
 
-	// Function to check smaller which is use in rules for validate
-	$.validator.addMethod("lessThan",
-		function (value, element, param) {
-			var $max = $(param);
-			if (this.settings.onfocusout) {
-				$max.off(".validate-lessThan").on("blur.validate-lessThan", function () {
-					$(element).valid();
-				});
-			}
-			return parseInt(value) < parseInt($max.val());
-	}, " Min must be smaller than max");
-	
-	// jQuery Plugin
-	// Rules for validating the input form
-	// required: Make sure input box is not empty
-	// number: make sure the input is number
+    // Function to check smaller which is use in rules for validate
+    $.validator.addMethod("lessThan",
+        function (value, element, param) {
+            var $max = $(param);
+            if (this.settings.onfocusout) {
+                $max.off(".validate-lessThan").on("blur.validate-lessThan", function () {
+                    $(element).valid();
+                });
+            }
+            return parseInt(value) < parseInt($max.val());
+    }, " Min must be smaller than max");
+    
+    // jQuery Plugin
     $('#input-form').validate({
-		rules: {
-			fCol: {
-				required: true,
-				number: true,
-				range: [-100, 100],
-				lessThan: '#lCol'
-			},
-			lCol: {
-				required: true,
-				number: true,
-				range: [-100, 100],
-				greaterThan: '#fCol'
-			},
-			fRow: {
-				required: true,
-				number: true,
-				range: [-100, 100],
-				lessThan: '#lRow'
-			},
-			lRow: {
-				required: true,
-				number: true,
-				range: [-100, 100],
-				greaterThan: '#fRow'
-			}
-		},
-		//Message for error, replace the default messages from validate function.
-		messages: {
-			fCol: {
-				required: " Error: Please enter an integer",
-				number: " Error: Please enter an integer",
-				range: " Error: Please value between [-100, 100]"
-			},
-			lCol: {
-				required: " Error: Please enter an integer",
-				number: " Error: Please enter an integer",
-				range: " Error: Please value between [-100, 100]"
-			},
-			fRow: {
-				required: " Error: Please enter an integer",
-				number: " Error: Please enter an integer",
-				range: " Error: Please value between [-100, 100]"
-			},
-			lRow: {
-				required: " Error: Please enter an integer",
-				number: " Error: Please enter an integer",
-				range: " Error: Please value between [-100, 100]"
-			}
-		},
-		// submit button pressed. 
-		// it will create table after all the input value passed the rules
-		submitHandler: function() {
-			tableCreate();
-			return false;
-		},
-		
-		// incase resubmit with an invalid value, table will be empty
-		invalidHandler: function() {
-			$("#errorMessage").empty();
-			$("#table").empty();
-		}
-	});	
-	
-});		// end of input form
+        // Rules for validating the input form
+        // required: Make sure input box is not empty
+        // number: make sure the input is number
+        rules: {
+            fCol: {
+                required: true,
+                number: true,
+                range: [-100, 100],
+                lessThan: '#lCol'
+            },
+            lCol: {
+                required: true,
+                number: true,
+                range: [-100, 100],
+                greaterThan: '#fCol'
+            },
+            fRow: {
+                required: true,
+                number: true,
+                range: [-100, 100],
+                lessThan: '#lRow'
+            },
+            lRow: {
+                required: true,
+                number: true,
+                range: [-100, 100],
+                greaterThan: '#fRow'
+            }
+        },
+        //Message for error, replace the default messages from validate function.
+        messages: {
+            fCol: {
+                required: " Error: Please enter an integer",
+                number: " Error: Please enter an integer",
+                range: " Error: Please value between [-100, 100]"
+            },
+            lCol: {
+                required: " Error: Please enter an integer",
+                number: " Error: Please enter an integer",
+                range: " Error: Please value between [-100, 100]"
+            },
+            fRow: {
+                required: " Error: Please enter an integer",
+                number: " Error: Please enter an integer",
+                range: " Error: Please value between [-100, 100]"
+            },
+            lRow: {
+                required: " Error: Please enter an integer",
+                number: " Error: Please enter an integer",
+                range: " Error: Please value between [-100, 100]"
+            }
+        },
+        // submit button pressed. 
+        // it will create table after all the input value passed the rules
+        submitHandler: function() {
+            tableCreate();
+            return false;
+        },
+        
+        // incase resubmit with an invalid value, table will be empty
+        invalidHandler: function() {
+            $("#table").empty();
+        }
+    }); 
+    
+}); // end of input form
 
 
 // function to create dynamic table based on input from the users after passes the valid check
 function tableCreate() {  
     // cast all variable to Number for calculation to print out the dynamic table
-	var fCol, lCol, fRow, lRow;
+    var fCol, lCol, fRow, lRow;
     // use parseInt to get value as number from html input
     fCol = parseInt($('input[name=fCol]').val());  //First Column
     lCol = parseInt($('input[name=lCol]').val());  //Last Column
@@ -160,9 +159,9 @@ function tableCreate() {
 
     // Print out the Dynamic table
     // document.getElementById('table').innerHTML = CreateTable;
-	$("#table").html(CreateTable);
-	
-	// Stop the form from refreshing.
-	return false;
-	
+    $("#table").html(CreateTable);
+
+    // Stop the form from refreshing.
+    return false;
+    
 }
