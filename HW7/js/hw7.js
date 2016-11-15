@@ -12,6 +12,7 @@
 // I pretty much using http://downing.io/GUI/assignment7.html as a reference for this 
 // assignment. 
 
+// Check to make sure the page ready
 $().ready(function () {
 	
 	// Valid function to check the input is smaller or grader based on the source example
@@ -40,6 +41,7 @@ $().ready(function () {
 			return parseInt(value) < parseInt($max.val());
 	}, " Min must be smaller than max");
 	
+	// jQuery Plugin
 	// Rules for validating the input form
 	// required: Make sure input box is not empty
 	// number: make sure the input is number
