@@ -46,6 +46,8 @@ $().ready(function () {
         // Rules for validating the input form
         // required: Make sure input box is not empty
         // number: make sure the input is number
+        // range: make sure input is between -100 to 100
+        // lessThan/greaterThan is two functions above to make sure Min value is smaller than Max value
         rules: {
             fCol: {
                 required: true,
