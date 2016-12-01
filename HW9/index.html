@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<!--
+    Name: Chuong Vu
+    Email: Chuong_Vu@student.uml.edu
+    Date: 11/22/2016
+    Major: Computer Science
+    School: University of Massachesetts Lowell
+    Course: 91.61 GUI Programming I
+    Link: https://vdc1703.github.io/GUI-1/HW8/index.html
+    css: https://vdc1703.github.io/GUI-1/HW8/css/style.css
+    Javascript: https://vdc1703.github.io/GUI-1/HW8/js/hw8.js
+    Description: Assignment 9 - Implementing a Bit of Scrabble with Drag-and-Drop
+    Copyright @ 2016 Chuong Vu - 91.61 GUI Programming I
+-->
+
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dynamic Multiplication Table</title>
+		<!-- jQuery UI css -->
+		<link type="text/css" rel="stylesheet" href="css/jquery-ui.min.css">
+		<!-- stylesheets -->
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+		<div id="main">
+			<!-- User input form with Error tag message -->
+			<form id="input-form">
+				<h2>Dynamic Multiplication Table</h2>
+				Please enter 4 numbers or move th slide <b>[Range From -10 To 10]</b> in the fields belows, the Dynamic Multiplication Table will automatic created.<br>
+				  <br>
+				<p class="inputf"><b>Verital Columns</b><br><label>Min Value:</label><input type="text" id="fCol" name="fCol" placeholder="Min Column" size="10" value="0"></p>
+				<div id="slider1" class="inputslider"></div>
+				<br><br>
+				
+				<p class="inputf"><label>Max Value:</label><input type="text" id="lCol" name="lCol" placeholder="Max Column" size="10" value="0"></p>
+				<div id="slider2" class="inputslider"></div>
+				<br><br>
+				
+				<p class="inputf"><b>Horizontal Rows</b> <br><label>Min Value:</label><input type="text" id="fRow" name="fRow" placeholder="Min Row" size="10" value="0"></p>
+				<div id="slider3" class="inputslider"></div>
+				<br><br>
+				
+				<p class="inputf"><label>Max Value:</label><input type="text" id="lRow" name="lRow" placeholder="Max Row" size="10" value="0"></p>
+				<div id="slider4" class="inputslider"></div>
+				
+				<br><br>
+				<!--Submit Button-->
+				<input type="submit" id="button-submit" value="Save Table">
+				<input type="button" id="deteletabs" value="Delete All Tables">
+				<!-- Link back to Homepage -->
+				<a href="../index.html" class="link">Back To Home</a>
+
+				<!-- Error Meaage Output -->
+				<div id='errorMessage'></div>
+			</form>
+		</div>
+		
+		<div class="clear"></div>
+		<!-- Table output -->
+		<div id='table'></div>
+		
+		<div class="clear"></div>
+		<div id="msgnotes">Save Tab Table</div>
+		<br />
+		<!-- Tabs Savers -->
+    <div id="divTabs">
+			<ul id="ulTabs"></ul>
+		</div> 
+
+        <!--Display footer-->
+        <div class="clear"></div>
+        <div id="footer">
+            <p>Copyright &copy; 2016 Chuong Vu - 91.61 GUI Programming I</p>
+            <!-- W3C valid html5 and css3 -->
+            <p>
+                <a href="http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvdc1703.github.io%2FGUI-1%2FHW8%2Findex.html&profile=css3&usermedium=all&warning=1&vextwarning=&lang=en"><img style="border:0;width:88px;height:31px" src="img/valid-css.png" alt="Valid CSS!"></a> 
+                <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvdc1703.github.io%2FGUI-1%2FHW8%2Findex.html"><img style="border:0;width:88px;height:31px" src="img/html5-courses.png" alt="Valid HTML5"></a>
+            </p>
+        </div>
+	<!-- jQuery -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+	<!-- jQuery UI-->
+    <script src="js/jquery-ui.min.js"></script>
+	<!-- jQuery Validation plugin -->
+    <script src="js/jquery.validate.js"></script>
+    <!--load javascript file-->
+    <script type="text/javascript" src="js/hw8.js"></script>
+    </body>
+</html>
