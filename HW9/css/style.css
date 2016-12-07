@@ -1,130 +1,260 @@
 /* Copyright @ Chuong Vu */
 /* Email: Chuong_Vu@student.uml.edu */
+/* This css is use for assignment 9 */
 
 /* background color tag */
 body{
-    background-color: #A4FA97;
+   /* // background-color: black; */
+    background-image: url("../img/background.png");
 }
 
 /* For Main div with red color border */
 #main {
-    margin-left: 10px;
-    max-width: 700px;
-    min-width: 20%;
-    padding: 10px;
-    border: 1px solid #800303;
-    background-color: #B8F1F0;
-	/* display: inline-block; */
-	/* float: left; */
+    border-color: red;
+    border-style: solid;
+    border-radius: 5px; 
+    height: 100%;
+    display: table;
+    margin: auto;
+    position: relative;
 }
 
-/* For Back To Home tag */
-.link {
+/* This is for left div in main */
+#panel-left {
+    border-color: green;
+    border-style: solid;
+    /* display: table-cell; */
+    float: left;
+    position: static;
+    border-radius: 10px; 
+
+}
+
+/* for game board and title */
+.container {
+    display: table;
+}
+
+/* This is for game board */
+#game_board {
+    border-color: #0000FF;
+    border-style: solid;
+    /* display: table; */
+    /* float: right; */
+/*  width: 70%;*/
+    min-height: 10px;
+}
+
+/* Information box for titles rack, buttons, score */
+#info {
+    border-color: red;
+    border-style: solid;
+    height: 200px;
+    border-radius: 8px; 
+}
+
+/* This is for the Letter Rack */
+#tiles-rack {
+    border-color: black;
+    border-style: solid;
+    height: 60px;
+    margin: auto;
+    border-radius: 5px; 
+    position:relative;
+}
+
+/* for all img in the rack */
+#tiles-rack  img {
+    border: 1px solid;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    margin: 3px;
+}
+
+/* Reset game button */
+#resetgame {
+    width: 180px;
+    height: 50px;
+    border-radius: 7px;
+}
+
+/* for exchange title button */
+#exchange {
+    width: 180px;
+    height: 50px;
+    border-radius: 7px;
+}
+
+/* main div for exchange and reset button */
+#shuff-exchange{
+    margin: 0 auto;
+    text-align: center;
+    border-color: green;
+    border-style: solid;
+}
+
+/* OK button */
+#ok {
+    width: 180px;
+    height: 50px;
+    border-radius: 7px;
     float: right;
 }
 
-/* Table output */
-#table {
-    max-width: 5%;
-    padding: 10px;
-    margin: 0 auto;
-	float: left;
-	/* display: inline-block; */
-}
-/* Table's style */
-#style-table {
-    border-spacing: 1px;
-    /* width: 100%; */
-    empty-cells: hide;
-}
 
-
-/* First Row and Column Color */
-td.header {
-    background-color: black;
-    color: #FFF;
-    border: #FFF 1px thin;
-	padding: 1px;
+/* SCRABBLE ONLINE title */
+.title  {
+    margin: auto;
     text-align: center;
-    font-family: 'Julius Sans One', sans-serif;
-	font-size: 12pt;
+    font-size: 2em;
+    font-weight: bold;
+    color: blue;
 }
 
-/* Child with blank color in table */
-td.child-blank {
+/* Error message */
+.error {
+    margin: auto;
     text-align: center;
-    border: 2px solid black;
-	padding: 1px;
-    width: 12px;
-    height: 12px;
-	font-size-adjust: 0.58;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    
 }
 
-/* Child with background color in table */
-td.child-color {
-    text-align: center;
-    border: 2px solid black;
-    background-color: #FC886F;
-	padding: 1px;
-    width: 12px;
-    height: 12px;
-	font-size-adjust: 0.58;
+/* Remain Left table */
+#bagtiles {
+    /* border-color: black; */
+    /* border-style: solid; */
+    font-weight: bold;
+    height: 100%;
+    width: 100%;
 }
 
-/* for footer use only */
-#footer {
-    font-style: italic;
+/* for table cell in remaning box */
+.remainword {
     margin: auto;
 }
 
-/* Tabs slider css */
-
-/* Tabs styling */
-.tab.ui-state-default {
-  background: red;
-  color: white;
+/* normal word class */
+.RWord {
+    text-align: center;
+    width: 38px;
+    height: 38px;
 }
 
-/* Active tab styling */
-.tab.ui-state-active {
-  background: #004c00;               /* Green */
-  color: black;
+/* container for score and ok button */
+#scoreok {
+    display:table;
+    width:100%;
+    height:100%;
+    margin: 0 auto;
+}
+
+/* score style */
+.score_left {
+    margin: 20px 50px auto;
+    display:table-cell;
+    float: left;
+}
+
+/* ok button */
+.score_right {
+    display:table-cell;
+    margin: 10px;
+    float: right;
+}
+
+/* score text size */
+#score {
+    font-size: 1.5em;
 }
 
 
-/* for jQuery plugin generates error */
-.error {
-  color: red;
+/* Change the color after accepted */
+#accepted {
+    border-color: red;
 }
 
-#fCol-error, #lCol-error, #fRow-error, #lRow-error {
-	margin-left: 2em;
-	  display: inline;
+/* One the letter is accpet, no longer can be drag */
+#imgAccepted {
+    border-color: red;
+    /* pointer-events: none; */
 }
 
-.ui-slider-horizontal {
-	height: 10px;
-    width: 200px;
-	left: 10px;
+/* all td tag in html */
+td {
+  background: #D2B48C;
+  border: 1px solid white;
+  resize: both;
+  height: 50px;
+  width: 50px;
+  z-index: 3;
 }
 
-.ui-slider .ui-slider-handle {
-    height: 15px;
-    width: 10px;
-    padding-top: 5px;
+/* img in td tag */
+#tbBoard img {
+    display:block;
+    width: 100%;
+    height: 50px;
+    margin: auto;
 }
 
-.inputf {
-	display: inline;
+/* td in RackWord*/
+#RackWord td {
+    border: 1px solid green;
+    width: 50px;
+    height: 50px;
 }
 
-.inputslider {
-	display: inline-block;
+/* img in RackWord */
+#RackWord img {
+    display:block;
+    width: 100%;
+    height: 50px;
+    margin: auto;
 }
 
-label { 
-	display: inline-block;
-	width: 80px; 
+/*
+.TxWord, DxWord, TxLetter, DxLetter is use for check
+ the double or triple score
+*/
+.TxWord {
+    background-image: url("../img/scrabble/TripleWord.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.DxWord {
+    background-image: url("../img/scrabble/DoubleWord.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.TxLetter {
+    background-image: url("../img/scrabble/TripleLetter.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.DxLetter {
+    background-image: url("../img/scrabble/DoubleLetter.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.Smile {
+    background-image: url("../img/scrabble/smile.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+/* for footer use only */
+#footer {
+    color: black;
+    font-style: italic;
+    margin: auto;
 }
 
 
@@ -132,19 +262,3 @@ label {
 .clear{
     clear: both;
 }
-
-/* For note before divTabs */
-#msgnotes {
-	padding-left: 10px;
-}
-
-/* Save Table tabs style */
-#divTabs {
-    width: 750px;
-}
-
-/* for li tag in divTabs */
-#divTabs li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
-
-
-

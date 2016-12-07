@@ -1,0 +1,153 @@
+/* Copyright @ Chuong Vu */
+/* Email: Chuong_Vu@student.uml.edu */
+
+/* background color tag */
+body{
+   /* // background-color: black; */
+	background-image: url("../img/background.png");
+}
+
+/* For Main div with red color border */
+#main {
+	border-color: red;
+	border-style: solid;
+	height: 100%;
+	display: table;
+	margin: auto;
+	position: relative;
+}
+
+#panel-left {
+	border-color: green;
+	border-style: solid;
+	/* display: table-cell; */
+	float: left;
+	position: static;
+	border-radius: 10px; 
+
+}
+
+#game_board {
+	border-color: #0000FF;
+	border-style: solid;
+	display: table;
+	/* float: right; */
+/*	width: 70%;*/
+	min-height: 10px;
+}
+
+#info {
+	border-color: red;
+	border-style: solid;
+	height: 200px;
+}
+
+#tiles-rack {
+	border-color: black;
+	border-style: solid;
+	height: 60px;
+	margin: auto;
+	border-radius: 5px; 
+	position:relative;
+}
+
+
+#tiles-rack  img {
+	border: 1px solid;
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+	margin: 3px;
+}
+
+/* .shadow { */
+	/* margin: 4px; */
+	/* background-color: rgb(167,106,89); /* Needed for IEs */ */
+   /* -moz-box-shadow:    inset 0 0 8px #000000; */
+   /* -webkit-box-shadow: inset 0 0 8px #000000; */
+   /* box-shadow:         inset 0 0 8px #000000; */
+/* } */
+
+
+#shuff-exchange{
+	margin: 0 auto;
+	text-align: center;
+	border-color: green;
+	border-style: solid;
+}
+
+#bagtiles {
+	border-color: black;
+	border-style: solid;
+	height: 100%;
+	width: 100%;
+}
+
+.remainword {
+	margin: auto;
+}
+
+.RWord {
+	text-align: center;
+	width: 38px;
+	height: 38px;
+}
+
+
+
+
+
+
+td {
+  background: #D2B48C;
+  border: 1px solid white;
+  resize: both;
+  height: 50px;
+  width: 50px;
+  z-index: 3;
+}
+
+.TxWord {
+	background-image: url("../img/scrabble/TripleWord.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.DxWord {
+	background-image: url("../img/scrabble/DoubleWord.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.TxLetter {
+	background-image: url("../img/scrabble/TripleLetter.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.DxLetter {
+	background-image: url("../img/scrabble/DoubleLetter.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.Smile {
+	background-image: url("../img/scrabble/smile.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+
+
+/* for footer use only */
+#footer {
+	color: black;
+    font-style: italic;
+    margin: auto;
+}
+
+
+/* For make div in stay in order*/
+.clear{
+    clear: both;
+}

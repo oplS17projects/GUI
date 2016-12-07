@@ -2,16 +2,16 @@
 // You will not get a server status
 // You can comment out lines 9 and 26 to make it work locally
 
-var xhr = new XMLHttpRequest();                 // comment here
+var xhr = new XMLHttpRequest();                 // Create an XMLHttpRequest Object (xhr)
 
-xhr.onload = function() {                       // comment here
+xhr.onload = function() {                       // One the XML Object is loaded
   // The following conditional check will not work locally - only on a server
-  //if(xhr.status === 200) {                      // comment here
-    responseObject = JSON.parse(xhr.responseText); // comment here
+  //if(xhr.status === 200) {                      // Check if the XML Object status === 200
+    responseObject = JSON.parse(xhr.responseText); // Convert JSON into Javascript object by parse method
 
-    // comment here
+    // Loop through the objects that represent each event using a for loop
     var newContent = '';
-    for (var i = 0; i < responseObject.events.length; i++) { // comment here
+    for (var i = 0; i < responseObject.events.length; i++) { // Loop through the responseObject.events and update the newContent
       newContent += '<div class="event">';
       newContent += '<img src="' + responseObject.events[i].map + '" ';
       newContent += 'alt="' + responseObject.events[i].location + '" />';
@@ -20,14 +20,14 @@ xhr.onload = function() {                       // comment here
       newContent += '</div>';
     }
 
-    // comment here
+    // Update the page with the new content
     document.getElementById('content').innerHTML = newContent;
 
   //}
 };
 
-xhr.open('GET', 'data/data.json', true);        // comment here
-xhr.send(null);                                 // comment here
+xhr.open('GET', 'data/data.json', true);        // Prepare for the request
+xhr.send(null);                                 // send the request
 
 // When working locally in Firefox, you may see an error saying that the JSON is not well-formed.
 // This is because Firefox is not reading the correct MIME type (and it can safely be ignored).
