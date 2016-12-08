@@ -6,9 +6,17 @@
 function UpdateRemainWord() {
     var remain = "";
     $("#bagtiles").html(remain);
+	
+	// This loop use to calculate the total letter remaining
+	var totalLetter = 0;
+	var sLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_";
+	for (var i = 0; i < sLetter.length; i++){
+		totalLetter += ScrabbleTiles[sLetter[i]].number_remaining;
+	}
+	
     remain += '<table class="remainword">';
     // first row 
-    remain += '<tr><td class="RWord" colspan="9">REMAINING LETTER</td></td>';
+    remain += '<tr><td class="RWord Remain" colspan="9">REMAINING LETTER: ' + totalLetter + '</td></td>';
     // second row
     remain += '<tr><td class="RWord">' + "A: " + ScrabbleTiles["A"].number_remaining + '</td>';
     remain += '<td class="RWord">' + "B: " + ScrabbleTiles["B"].number_remaining + '</td>';
@@ -43,6 +51,8 @@ function UpdateRemainWord() {
 
     remain += '</table>';
     
+	
+	
     $("#bagtiles").html(remain);
 
 }

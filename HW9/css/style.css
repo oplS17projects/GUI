@@ -49,7 +49,7 @@ body{
 #info {
     border-color: red;
     border-style: solid;
-    height: 200px;
+    height: 260px;
     border-radius: 8px; 
 }
 
@@ -72,8 +72,18 @@ body{
     margin: 3px;
 }
 
+/* main div for exchange and reset button */
+#shuff-exchange{
+    text-align: center;
+    border-color: green;
+    border-style: solid;
+	height: 55px;
+	margin: 0 auto;
+}
+
 /* Reset game button */
 #resetgame {
+	margin-top: 3px;
     width: 180px;
     height: 50px;
     border-radius: 7px;
@@ -81,18 +91,30 @@ body{
 
 /* for exchange title button */
 #exchange {
+	margin-top: 3px;
+    width: 180px;
+    height: 50px;
+    border-radius: 7px;
+
+}
+
+/* Clear gameboard div */
+#C_Board {
+    margin: 0 auto;
+    text-align: center;
+    border-color: blue;
+    border-style: solid;
+	height: 55px;
+}
+
+/* Clear gameboard button */
+#clear_board {
+	margin-top: 3px;
     width: 180px;
     height: 50px;
     border-radius: 7px;
 }
 
-/* main div for exchange and reset button */
-#shuff-exchange{
-    margin: 0 auto;
-    text-align: center;
-    border-color: green;
-    border-style: solid;
-}
 
 /* OK button */
 #ok {
@@ -101,6 +123,9 @@ body{
     border-radius: 7px;
     float: right;
 }
+
+
+
 
 
 /* SCRABBLE ONLINE title */
