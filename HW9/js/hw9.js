@@ -38,8 +38,8 @@ $().ready(function () {
         Exchange();
         DragAndDrop();
     });
-	
-	// waiting for exchange button is click and call drag drop to re-enable drag drop
+    
+    // waiting for exchange button is click and call drag drop to re-enable drag drop
     $("#clear_board").click (function() {
         ClearGameBoard();
         DragAndDrop();
@@ -167,105 +167,106 @@ var word_score = 0;
 var word_length = 0;
 // This function use for check the word is valid or not
 function SubmitWord () {
-	var Word_Obj = [];
-		
-	Word_Obj = GetWordFromBoard();
+    var Word_Obj = [];
+        
+    Word_Obj = GetWordFromBoard();
     // check for word is valid or not
-	if (word_length != Word_Obj.length) {
-		var checkcorrect = CheckWordValid(Word_Obj);
-		
-		// if the word is valid, then calculate the score
-		if(checkcorrect) {
-			var Score = GetScore(Word_Obj); // get score return from the word
-			AddToTable(Word_Obj);   // add the valid word to the game board so it wont be able to move
-			GetNewLetter();
-			var word = WordCheck + " is a valid word";
-			$(".error").html(word);     // display the message 
-			word_score += Score;    // update the score
-			word_length = Word_Obj.length;	// update flag for make sure not check the same word again
-		} else {
-			var word = WordCheck + " is not a valid word";
-			$(".error").html(word); // display the message 
-			returntorack(); // return all the Letter that is invalid back to rack
-		}
-		$('#score').html(word_score);   // display the score
-		Word_Obj = [];  // empty the object
+    if (word_length != Word_Obj.length) {
+        var checkcorrect = CheckWordValid(Word_Obj);
+        
+        // if the word is valid, then calculate the score
+        if(checkcorrect) {
+            var Score = GetScore(Word_Obj); // get score return from the word
+            AddToTable(Word_Obj);   // add the valid word to the game board so it wont be able to move
+            GetNewLetter();
+            var word = WordCheck + " is a valid word";
+            $(".error").html(word);     // display the message 
+            word_score += Score;    // update the score
+            word_length = Word_Obj.length;  // update flag for make sure not check the same word again
+        } else {
+            var word = WordCheck + " is not a valid word";
+            $(".error").html(word); // display the message 
+            returntorack(); // return all the Letter that is invalid back to rack
+        }
+        $('#score').html(word_score);   // display the score
+        Word_Obj = [];  // empty the object
 
-	} else {
-		var word = "Error: There are either NO WORD or WORD THAT ALREADY VALID";
-		$(".error").html(word); // display the message 
-	}
+    } else {
+        var word = "Error: There are either NO WORD or WORD THAT ALREADY VALID";
+        $(".error").html(word); // display the message 
+    }
 }
 
 // This function is use to clear game board if 
 // player can't get any more word but the score will
 // still remain
 function ClearGameBoard(){
-	GenerateBoard();	// just call the GenerateBoard function to re-draw the new board
+    GenerateBoard();    // just call the GenerateBoard function to re-draw the new board
+    word_length = 0;    // reset the word_length for next check
 }
 
 // This function is called for the first time check the board gamel letter
 function GetWordFromBoard(){
-	var Word_Obj = [];
+    var Word_Obj = [];
     var rid = $("#game_board").find('td');
     rid.each(function() {
         // check if there is <img> tab
-		if($(this)[0].childElementCount > 0 && ($(this)[0].id == "dropped" || $(this)[0].id == "accepted")) {
-			if($(this)[0].id == "dropped" ) {
-				var strClass = String($(this).attr('class'));
-				var match = strClass.match(/([a-zA-Z]+)(.+)(\d+)(.+)/);     // regex for make groups
-				// console.log(match);
-				$temp = $(this);
-				var letterObj = getLetter($temp);
-				// console.log(letterObj);
-				Word_Obj.push({
-					"Letter" : letterObj.Letter,
-					"Value" : letterObj.value,
-					"pos" : match[3],
-					"xValue" : match[1],
-					"score" : 0
-				});
-			} else {
-				// console.log("value2", $(this));
-				var strClass = String($(this).attr('class'));
-				var match = strClass.match(/([a-zA-Z]+)(.+)(\d+)(.+)/);     // regex for make groups
-				//console.log(match);
-				$temp = $(this);
-				//console.log("this", $temp);
-				//var letterObj = getLetter($temp);
-				//console.log(letterObj);
-				Word_Obj.push({
-					"Letter" : $(this)[0].firstChild.className,
-					"Value" : ScrabbleTiles[$(this)[0].firstChild.className].value,
-					"pos" : match[3],
-					"xValue" : match[1],
-					"score" : 0
-				});
-			}
+        if($(this)[0].childElementCount > 0 && ($(this)[0].id == "dropped" || $(this)[0].id == "accepted")) {
+            if($(this)[0].id == "dropped" ) {
+                var strClass = String($(this).attr('class'));
+                var match = strClass.match(/([a-zA-Z]+)(.+)(\d+)(.+)/);     // regex for make groups
+                // console.log(match);
+                $temp = $(this);
+                var letterObj = getLetter($temp);
+                // console.log(letterObj);
+                Word_Obj.push({
+                    "Letter" : letterObj.Letter,
+                    "Value" : letterObj.value,
+                    "pos" : match[3],
+                    "xValue" : match[1],
+                    "score" : 0
+                });
+            } else {
+                // console.log("value2", $(this));
+                var strClass = String($(this).attr('class'));
+                var match = strClass.match(/([a-zA-Z]+)(.+)(\d+)(.+)/);     // regex for make groups
+                //console.log(match);
+                $temp = $(this);
+                //console.log("this", $temp);
+                //var letterObj = getLetter($temp);
+                //console.log(letterObj);
+                Word_Obj.push({
+                    "Letter" : $(this)[0].firstChild.className,
+                    "Value" : ScrabbleTiles[$(this)[0].firstChild.className].value,
+                    "pos" : match[3],
+                    "xValue" : match[1],
+                    "score" : 0
+                });
+            }
         }
-	});
-	return Word_Obj;
+    });
+    return Word_Obj;
 }
 
 // Check if the word valid for the first time check
 // when the board game is empty
 function CheckWordValid($temp) {
-	for (var i = 0; i < $temp.length - 1 ; i++){
-		if(parseInt($temp[i].pos) + Number(1) != parseInt($temp[i+1].pos))
-			return false;
-	}
-	var word = "";
-	for (var i = 0; i < $temp.length; i ++){
-		word += $temp[i].Letter;
-	}
+    for (var i = 0; i < $temp.length - 1 ; i++){
+        if(parseInt($temp[i].pos) + Number(1) != parseInt($temp[i+1].pos))
+            return false;
+    }
+    var word = "";
+    for (var i = 0; i < $temp.length; i ++){
+        word += $temp[i].Letter;
+    }
     // console.log(word);
-	WordCheck = word;
-	// check if the word is in dictionary
-	if (CheckDictionary(word)) {
-		firstchecktrue = true;
-		return true;
-	}
-	return false;	
+    WordCheck = word;
+    // check if the word is in dictionary
+    if (CheckDictionary(word)) {
+        firstchecktrue = true;
+        return true;
+    }
+    return false;   
 }
 
 // get letter function from LetterOnRack
@@ -283,55 +284,54 @@ function getLetter($temp) {
 // This function use to get the new Letter to the rack
 // after the board accept the valid letter
 function GetNewLetter() {
-	// console.log("letter on rack", LetterOnRack);
-	
-	tiles = "";
-	var sLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_";
-	var MissWord = 7 - LetterOnRack.length;
-	// console.log(MissWord);
+    // console.log("letter on rack", LetterOnRack);
+    
+    tiles = "";
+    var MissWord = 7 - LetterOnRack.length;
+    // console.log(MissWord);
 
-	// create an empty array with 0 value
-	var tempObj = [0, 0, 0, 0, 0 , 0, 0];
-	
-	// This loop use to store all the letter in LetterOnRack
-	// with the correct position to the tempObj array
-	var j = 0;
-	for (var i = 0; i < 7; i++){
-		// check to make sure j is not out of range
-		if (j < LetterOnRack.length){
-			// if they are the same, then 
-			if(LetterOnRack[j].pos == i) {
-				tempObj[i] = LetterOnRack[j];			
-				j++;
-			}
-		}
-	}
-	
-	// This loop use for replace slot value 0 with it new letter
-	// same with the generate new Letter
-	for (var i = 0; i < tempObj.length; i++){
-		if (tempObj[i] == 0) {
-			var index = Math.floor(Math.random() * sLetter.length); // get random index in from sLetter
-			while (ScrabbleTiles[sLetter[index]].number_remaining === 0) {
-				index = Math.floor(Math.random() * sLetter.length);
-			}
-			// update the remainning value in ScrabbleTiles array
-			ScrabbleTiles[sLetter[index]].number_remaining = ScrabbleTiles[sLetter[index]].number_remaining - 1;
-			
-			// Get letter link
-			var letter_url = "img/scrabble/Letter_" + sLetter[index] + ".png";
-			
-			tempObj[i] = ({"Letter": sLetter[index], "id" : "tile_drag_" + i, "pos": i, "value" : ScrabbleTiles[sLetter[index]].value, "Link" : "<img id='tile_drag_" + i + "' class='board_piece_" + sLetter[index] + "' src='" + letter_url + "' /></img>"});
-		}
-	}
-	
-	// Empty the LeterOnrack
-	LetterOnRack = [];
-	// Copy back with the tempObj
-	LetterOnRack = tempObj;
-	// console.log("temp", LetterOnRack);
-    	
-	// console.log(LetterOnRack);
+    // create an empty array with 0 value
+    var tempObj = [0, 0, 0, 0, 0 , 0, 0];
+    
+    // This loop use to store all the letter in LetterOnRack
+    // with the correct position to the tempObj array
+    var j = 0;
+    for (var i = 0; i < 7; i++){
+        // check to make sure j is not out of range
+        if (j < LetterOnRack.length){
+            // if they are the same, then 
+            if(LetterOnRack[j].pos == i) {
+                tempObj[i] = LetterOnRack[j];           
+                j++;
+            }
+        }
+    }
+    
+    // This loop use for replace slot value 0 with it new letter
+    // same with the generate new Letter
+    for (var i = 0; i < tempObj.length; i++){
+        if (tempObj[i] == 0) {
+            var index = Math.floor(Math.random() * sLetter.length); // get random index in from sLetter
+            while (ScrabbleTiles[sLetter[index]].number_remaining === 0) {
+                index = Math.floor(Math.random() * sLetter.length);
+            }
+            // update the remainning value in ScrabbleTiles array
+            ScrabbleTiles[sLetter[index]].number_remaining = ScrabbleTiles[sLetter[index]].number_remaining - 1;
+            
+            // Get letter link
+            var letter_url = "img/scrabble/Letter_" + sLetter[index] + ".png";
+            
+            tempObj[i] = ({"Letter": sLetter[index], "id" : "tile_drag_" + i, "pos": i, "value" : ScrabbleTiles[sLetter[index]].value, "Link" : "<img id='tile_drag_" + i + "' class='board_piece_" + sLetter[index] + "' src='" + letter_url + "' /></img>"});
+        }
+    }
+    
+    // Empty the LeterOnrack
+    LetterOnRack = [];
+    // Copy back with the tempObj
+    LetterOnRack = tempObj;
+    // console.log("temp", LetterOnRack);
+        
+    // console.log(LetterOnRack);
     var tiles = "";
     tiles += '<table id="RackWord"><tr>';
     var j = 0;
@@ -347,8 +347,8 @@ function GetNewLetter() {
     
     tiles += '</tr></table>';
     $("#tiles-rack").html(tiles); // Update to the tiles-rack
-    UpdateRemainWord();	// Update the reamining word 
-    	
+    UpdateRemainWord(); // Update the reamining word 
+        
 }
 
 
@@ -358,7 +358,7 @@ function AddToTable($word) {
     rid.each(function() {
         if($(this)[0].id == "dropped") {
             var classID = $(this)[0].firstChild.className;
-			var CurrentLetter = classID.match(/(board_piece_)(.)(.+)/);				
+            var CurrentLetter = classID.match(/(board_piece_)(.)(.+)/);             
             // Get index for LetterOnRack
             var index = String($(this)[0].firstChild.id).replace("tile_drag_", "");
             // Pop that Letter from the LetterOnRack
@@ -533,10 +533,11 @@ var LetterOnRack = [
     // Object { Letter: "A", id: "tile_drag_0", value: 1, "link": 0};
 ]; // holds the letter's value
 
+var sLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_";
 // This function use to generate 7 random letters from ScrabblesTiles array
 function GenerateTiles() {
     var tiles = "";
-    var sLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_";
+
     tiles += '<table id="RackWord"><tr>';
     LetterOnRack = [];
     for (var i = 0; i < 7; i++) {
