@@ -1,3 +1,4 @@
+/* This tag is for the html and body with background color */
 html, body {
     background-color: #b0c4de;
     font-family: 'Josefins Sans', sans-serif;
@@ -8,12 +9,8 @@ html, body {
     padding-right: 6%;
 }
 
-html, body{
-    background-color: #fff;
-    padding-left: 0px;
-    padding-right: 0px;
-}
 
+/* For header use with backgound image */
 #header{
 	height: 350px;
     width: 100%;
@@ -26,6 +23,7 @@ html, body{
 	background-color: black;
 }
 
+/* img for social media such as facebook, github, etc */
 .img-social {
 	width: 42px;
 	height: 42px;
@@ -35,10 +33,12 @@ html, body{
     transition: 0.3s;
 }
 
+/* Header name */
 .text-header {
 	padding-left: 10%;
 }
 
+/*these class is use for setup Name and about*/
 .name-tag {
     color: #EF574E;	
 }
@@ -54,7 +54,10 @@ html, body{
 	padding: 0;
 	font-size: 6em;
 }
+/* ---------------------------*/
 
+
+/*for the box of assignments and inclass excerise */
 .container-fluid {
     padding-top: 0px;
     padding-left: 0px;
@@ -133,6 +136,11 @@ div.about {
 	/* background-color: white; */
 }
 
+/* ---------------------------*/
+
+
+/*from here is for pictures on objects in the page*/
+
 .text-left a {
 	color: Green;
 }
@@ -172,6 +180,9 @@ div.about {
 	right: 0;	
 }
 
+/* ---------------------------*/
+
+/*footer tag in web*/
 #footer {
 	font-style: italic;
 	margin: auto;
