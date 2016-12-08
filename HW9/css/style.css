@@ -30,6 +30,14 @@ body{
 
 }
 
+/* For Back To Home tag */
+.link {
+	/* position: relative; */
+	float: right;
+	margin-top: 270px;
+	margin-right: 15px;
+}
+
 /* for game board and title */
 .container {
     display: table;
