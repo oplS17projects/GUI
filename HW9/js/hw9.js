@@ -25,7 +25,6 @@ $().ready(function () {
         DragAndDrop();
     });
     
-    
     // source for key up http://jsfiddle.net/sd88wucL/1/
     // waiting for OK button is click and call drag drop to re-enable drag drop
     $("#ok").click (function() {
@@ -44,6 +43,13 @@ $().ready(function () {
         ClearGameBoard();
         DragAndDrop();
     });
+	
+	// This button use to return back the un-checked letter back to rack
+	$("#back_rack").click (function() {
+        returntorack();
+        DragAndDrop();
+    });
+	back_rack
 });
 
 
@@ -111,16 +117,16 @@ function DropAble() {
     });
     
     // Allow to drag back to the Rack
-    $("#tiles-rack td").droppable ({
-        accept: ".ui-draggable",    // accept class ui-draggable after generate by draggable function
-        drop: function (event, ui) {
-            ReworkBoardGame();
-        },
-        out: function (event, ui) {
-            $(this).removeAttr('id');
-            //removeIDDrag();
-        }
-    });
+    // $("#tiles-rack td").droppable ({
+        // accept: ".ui-draggable",    // accept class ui-draggable after generate by draggable function
+        // drop: function (event, ui) {
+            // ReworkBoardGame();
+        // },
+        // out: function (event, ui) {
+            // $(this).removeAttr('id');
+            // //removeIDDrag();
+        // }
+    // });
 }
 
 // this function return true/false if SPACE is detect
