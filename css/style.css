@@ -33,22 +33,24 @@ html, body {
     transition: 0.3s;
 }
 
-/* Header name */
+/* Header name container */
 .text-header {
 	padding-left: 10%;
 }
 
-/*these class is use for setup Name and about*/
+/* these class is use for setup Name and about */
 .name-tag {
     color: #EF574E;	
 }
 
+/* For First name in the header */
 .fname{
 	margin: 0;
 	padding: 0;
 	font-size: 3em;
 }
 
+/* For last name in the header */
 .lname{
 	margin: 0;
 	padding: 0;
@@ -57,7 +59,7 @@ html, body {
 /* ---------------------------*/
 
 
-/*for the box of assignments and inclass excerise */
+/* for everything insize the header */
 .container-fluid {
     padding-top: 0px;
     padding-left: 0px;
@@ -65,14 +67,17 @@ html, body {
     padding-bottom: 15px;
 }
 
+/* center text for assignment */
 .text-center{
 	text-align:center;
 }
 
+/* left for li tag */
 .text-left{
 	text-align:left;
 }
 
+/* these for everything inside the div box */
 div.pad-top-50 {
     padding-top: 50px;
 }
@@ -90,6 +95,9 @@ div.about {
     padding-right: 15%;
 }
 
+/* ---------------------------*/
+
+/* this one if or my profile but not in use now */
 .img-profile {
     position: relative;
     height: 250px;
@@ -135,12 +143,11 @@ div.about {
 	position: relative;
 	/* background-color: white; */
 }
-
 /* ---------------------------*/
 
 
-/*from here is for pictures on objects in the page*/
-
+/* from here is for pictures on objects in the page */
+/* these are for every img that stay at the positon */
 .text-left a {
 	color: Green;
 }
@@ -189,10 +196,12 @@ div.about {
 	    font-weight: bold;
 }
 
+/* this for dropdown effect */
 .dropdown {
     position: relative;
 }
 
+/* this is for conentent inside the dropdown when the mouse is at the position */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -215,6 +224,7 @@ div.about {
 	color: red;
 }
 
+/* ---------------------------*/
 
 
 

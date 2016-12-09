@@ -2,6 +2,9 @@
 // Email: Chuong_Vu@student.uml.edus
 // Function call from Submit button to create Dynamic Table
 // Function to generate the scrabble board
+//
+// Feely to use my code but I'm not responsible for anything cause by my code.
+//
 function GenerateBoard() {
     var table = ""; // create variable with empty string
     $("#game_board").html(table);   // update the board with empty string

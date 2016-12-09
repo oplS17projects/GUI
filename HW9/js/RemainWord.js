@@ -2,6 +2,9 @@
 // Email: Chuong_Vu@student.uml.edu
 // This function use to Generate and Update remaining word from the ScrabbleTiles array
 // This simply create a string of tag and push to html using jQuery function
+//
+// Feely to use my code but I'm not responsible for anything cause by my code.
+//
 
 function UpdateRemainWord() {
     var remain = "";
@@ -13,7 +16,7 @@ function UpdateRemainWord() {
     for (var i = 0; i < sLetter.length; i++){
         totalLetter += ScrabbleTiles[sLetter[i]].number_remaining;
     }
-    
+
     remain += '<table class="remainword">';
     // first row 
     remain += '<tr><td class="RWord Remain" colspan="9">REMAINING LETTER: ' + totalLetter + '</td></td>';
@@ -50,9 +53,7 @@ function UpdateRemainWord() {
     remain += '<td class="RWord">' + "_: " + ScrabbleTiles["_"].number_remaining + '</td></td>';
 
     remain += '</table>';
-    
-    
-    
+
     $("#bagtiles").html(remain);
 
 }

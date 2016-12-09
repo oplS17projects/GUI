@@ -10,7 +10,13 @@
 // This is the main file which contain all the function that need for run the game
 // Although the game is still have some bugs because I did not have enough time to work 
 // on this assignment.
-
+//
+// Notes: Although the assignments have the difference rules for this game. But I based on the 
+// rules of the scrabble game to write functions. But I don't think this would make a big difference
+//
+//
+// Feely to use my code but I'm not responsible for anything cause by my code.
+//
 
 // Check to make sure the page ready
 $().ready(function () {
@@ -49,7 +55,7 @@ $().ready(function () {
         returntorack();
         DragAndDrop();
     });
-	back_rack
+
 });
 
 
@@ -116,6 +122,12 @@ function DropAble() {
 
     });
     
+	
+	// Notess: I got bug for drawing back to the tiles rack. And I don't have time to re-work on this bug since
+	// this one related to other function. 
+	// I would fix this if I have more time for this assignment.
+	
+	
     // Allow to drag back to the Rack
     // $("#tiles-rack td").droppable ({
         // accept: ".ui-draggable",    // accept class ui-draggable after generate by draggable function
@@ -131,8 +143,11 @@ function DropAble() {
 
 // this function return true/false if SPACE is detect
 function CheckSpaceLetter($Space) {
+	// this is get the class name in the object
 	var classID = $Space[0].className;
+	// using regex to groups and get the letter
     var CurrentLetter = classID.match(/(board_piece_)(.)(.+)/);   
+	// check if the letter is SPACE or not
 	if (CurrentLetter[2] == "_")
 		return true;
 	else
@@ -168,7 +183,9 @@ function SpaceSwap ($Space) {
 }
  // This function use to check the input is letter or not
 function CheckAlpha(word) {
+	// cast word to string, this just for make sure it it string
 	var check = String(word);
+	// regex groups
 	var result = check.match(/([a-zA-Z])+$/);
 	if (result == null)
 		return true;
@@ -213,7 +230,10 @@ function ReworkBoardGame() {
 // This function use to remove  the id from <td> tab
 // if there is no <img> tag in the cell
 function removeIDDrag() {
+	// get all the td tag to rid
     var  rid = $("#game_board").find('td');
+	
+	// loop through eash td in the table
     rid.each(function() {
         if($(this)[0].childElementCount == 0 && $(this)[0].id != "") {
             $(this).removeAttr('id');
@@ -229,11 +249,13 @@ var word_score = 0;
 var word_length = 0;
 // This function use for check the word is valid or not
 function SubmitWord () {
+	// define and create an empty array of object
     var Word_Obj = [];
-        
+    // get all letter on the board include the positon.
     Word_Obj = GetWordFromBoard();
     // check for word is valid or not
     if (word_length != Word_Obj.length) {
+		// define a variable based on the return value of the CheckWordValid function
         var checkcorrect = CheckWordValid(Word_Obj);
         
         // if the word is valid, then calculate the score
@@ -265,18 +287,24 @@ function SubmitWord () {
 function ClearGameBoard(){
     GenerateBoard();    // just call the GenerateBoard function to re-draw the new board
     word_length = 0;    // reset the word_length for next check
+	
 }
 
 
 // This function is called for the first time check the board gamel letter
 function GetWordFromBoard(){
+	// define and create an empty array of object
     var Word_Obj = [];
+	// get all the td tag on the game_board
     var rid = $("#game_board").find('td');
+	// loop through each td in the table
     rid.each(function() {
 		// console.log($(this));
         // check if there is <img> tab
         if($(this)[0].childElementCount > 0 && ($(this)[0].id == "dropped" || $(this)[0].id == "accepted")) {
+			// check if the id of the table cell is dropped
             if($(this)[0].id == "dropped" ) {
+				// if the id is dropped then do to following
                 var strClass = String($(this).attr('class'));
 				// console.log(strClass);
                 var match = strClass.match(/([a-zA-Z]+)(.+)(\d+)(.+)/);     // regex for make groups
@@ -291,7 +319,7 @@ function GetWordFromBoard(){
 					letterObj.Letter = matchregex[2];
 					letterObj.Value = ScrabbleTiles[matchregex[2]].value;
 				}
-				
+				// push all information need to calculate of the word to the object
                 Word_Obj.push({
                     "Letter" : letterObj.Letter,
                     "Value" : letterObj.value,
@@ -318,6 +346,7 @@ function GetWordFromBoard(){
             }
         }
     });
+	// return the object
     return Word_Obj;
 }
 
@@ -328,11 +357,14 @@ function CheckWordValid($temp) {
         if(parseInt($temp[i].pos) + Number(1) != parseInt($temp[i+1].pos))
             return false;
     }
+	// define and declear variable
     var word = "";
+	// loop through the object to get word
     for (var i = 0; i < $temp.length; i ++){
         word += $temp[i].Letter;
     }
     // console.log(word);
+	// store the word to wordcheck to it will be use later on print out the error message
     WordCheck = word;
     // check if the word is in dictionary
     if (CheckDictionary(word)) {
@@ -344,8 +376,11 @@ function CheckWordValid($temp) {
 
 // get letter function from LetterOnRack
 function getLetter($temp) {
+	// get the id from the object
     var imgid = $temp[0].firstChild.id;
+	// loop through to the LetterOnRack
     for (var i = 0; i < LetterOnRack.length; i++){
+		// if the letter is on the rack then return the LetterOnRack object
         if (LetterOnRack[i].id == imgid)
             return LetterOnRack[i];
     }
@@ -402,24 +437,9 @@ function GetNewLetter() {
     LetterOnRack = tempObj;
     // console.log("temp", LetterOnRack);
         
-    // console.log(LetterOnRack);
-    var tiles = "";
-    tiles += '<table id="RackWord"><tr>';
-    var j = 0;
-    rid = $("#tiles-rack").find('td');
-    for ( var i = 0; i < rid.length; i++){
-        if (i < LetterOnRack.length) {
-            tiles += "<td>" + LetterOnRack[j].Link + "</td>";
-            j++;
-        } else {
-            tiles += "<td></td>";
-        }
-    }
-    
-    tiles += '</tr></table>';
-    $("#tiles-rack").html(tiles); // Update to the tiles-rack
+    // reupdate titles
+    reTitle();
     UpdateRemainWord(); // Update the reamining word 
-        
 }
 
 
@@ -433,12 +453,46 @@ function AddToTable($word) {
             // Get index for LetterOnRack
             var index = String($(this)[0].firstChild.id).replace("tile_drag_", "");
             // Pop that Letter from the LetterOnRack
+			// remove the letter on the rack based on the index
             RemoveLetterFromRack(index);
+			// change the id of the accepted letter to imgAccepted (img tag)
             $(this)[0].firstChild.id = "imgAccepted";
+			// change the class of the acccepted (img tag)
             $(this)[0].firstChild.className = CurrentLetter[2];
+			// change the id of the table cell to accepted
             $(this)[0].id = "accepted";
         }
     });
+}
+
+
+// This function to reupdate titles
+function reTitle() {
+	// console.log(LetterOnRack);
+    // diefine an declear tiles variale as an empty string
+    var tiles = "";
+    tiles += '<table id="RackWord"><tr>';	// add to the string
+    // define and declear variable j start at 0 for keep track what is in the LetterOnRack
+    var j = 0;
+    rid = $("#tiles-rack").find('td');
+    // get all the td in the rack
+    // loop through the rid td
+    for ( var i = 0; i < rid.length; i++){
+    	// compare the LetterOnRack and what is currently on rack
+        if (i < LetterOnRack.length) {
+        	// add to the tiles
+            tiles += "<td>" + LetterOnRack[j].Link + "</td>";
+            j++;
+        } else {
+        	// if not in current rack then it should be empty
+            tiles += "<td></td>";
+        }
+    }
+    
+    tiles += '</tr></table>';
+    // at this point, we should have a new table of tiles as a string
+    $("#tiles-rack").html(tiles); // Update to the tiles-rack
+
 }
 
 // This function to return lette back to rack if the word is not valid after check
@@ -450,23 +504,9 @@ function returntorack() {
             $(this)[0].firstChild.outerHTML = "";
         }
     });
-        
-    // console.log(LetterOnRack);
-    var tiles = "";
-    tiles += '<table id="RackWord"><tr>';
-    var j = 0;
-    rid = $("#tiles-rack").find('td');
-    for ( var i = 0; i < rid.length; i++){
-        if (i < LetterOnRack.length) {
-            tiles += "<td>" + LetterOnRack[j].Link + "</td>";
-            j++;
-        } else {
-            tiles += "<td></td>";
-        }
-    }
-    
-    tiles += '</tr></table>';
-    $("#tiles-rack").html(tiles);
+       
+    // Udpate the tiles 
+    reTitle();
 }
 
 
@@ -474,12 +514,16 @@ function returntorack() {
 // array and push it back
 function RemoveLetterFromRack(x) {
     //console.log(x);
-    var temp = [];
+    var temp = []; // create a empty object
+    // loop through the element in the LetterOnRack
     for (var i = 0; i < LetterOnRack.length; i ++) {
+    	// if i is not equal to x then push to temp
         if (i != x)
             temp.push(LetterOnRack[i]);
-    }   
+    }
+    // empty the LetterOnRack
     LetterOnRack = [];
+    // Copy temp back to LetterOnRack
     LetterOnRack = temp;
     
     //console.log(LetterOnRack);
@@ -552,15 +596,21 @@ function Exchange() {
     //console.log(LetterOnRack);
     var  rid = $("#game_board").find('td');
     rid.each(function() {
+    	// check if the id is dropped
         if($(this)[0].id == "dropped") {
+        	// if it true then empty it
             $(this)[0].innerHTML = "";
+            // call the function to remove the id on drag
             removeIDDrag();
         }
     });
 
     // LetterOnRack, ScrabbleTiles
-    for (var i = 0; i < LetterOnRack.length; i++){
+    // this loop is update the number_remaining in the ScrabbleTiles
+    for (var i = 0; i < LetterOnRack.length; i++) {
+    	// get letter from LetterOnRack
         var letter = LetterOnRack[i].Letter;
+        // update the remaining number back to the ScrabbleTiles
         ScrabbleTiles[letter].number_remaining += 1;
     }
     LetterOnRack = [];  // empty the object
@@ -573,10 +623,15 @@ function Exchange() {
 // this function use to reset the id of the td
 // if the letter is no locked to board
 function removeid() {
+	// get the id letter on the board
     var rid = $("#game_board").find('td');
+    // loop through each td
     rid.each(function () {
+    	// get the id from the td
         var strID = String($(this).attr('id'));
+        // check if it is containt dropped word
         if (strID.indexOf("dropped") > -1) {
+        	// remove the id
             $(this).removeAttr('id');
         }
     });
@@ -594,6 +649,9 @@ function ResetGame() {
         ScrabbleTiles[sLetter[i]].number_remaining = ScrabbleTiles[sLetter[i]].original_distribution;
         // console.log("after",ScrabbleTiles[sLetter[i]].number_remaining, ScrabbleTiles[sLetter[i]].original_distribution);
     }
+    // reset everything to default;
+	WordCheck = "";
+	word_length = 0;
     word_score = 0;
     GenerateBoard();
     GenerateTiles();
