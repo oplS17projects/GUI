@@ -1,5 +1,11 @@
-
+// Copyright @ Chuong Vu
+// Email: Chuong_Vu@student.uml.edus
+// Function call from Submit button to create Dynamic Table
 // Function to generate the scrabble board
+//
+// Feely to use my code but I'm not responsible for anything cause by my code.
+//
+
 var table = "";
 function GenerateBoard() {
 	$("#game_board").html(table);
