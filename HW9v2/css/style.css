@@ -32,10 +32,9 @@ body{
 
 /* For Back To Home tag */
 .link {
-	/* position: relative; */
-	float: right;
-	margin-top: 270px;
-	margin-right: 15px;
+    /* position: relative; */
+    float: right;
+    margin-right: 15px;
 }
 
 /* for game board and title */
@@ -95,7 +94,7 @@ body{
     width: 180px;
     height: 50px;
     border-radius: 7px;
-	background-color: red;
+    background-color: red;
 }
 
 /* for exchange title button */
@@ -125,7 +124,7 @@ body{
 }
 
 #back_rack{
-	margin-top: 3px;
+    margin-top: 3px;
     width: 150px;
     height: 50px;
     border-radius: 7px;
@@ -137,8 +136,8 @@ body{
     height: 50px;
     border-radius: 7px;
     float: right;
-	font-size: 2em;
-	background-color: green;
+    font-size: 2em;
+    background-color: green;
 }
 
 
@@ -161,7 +160,7 @@ body{
     font-size: 20px;
     font-weight: bold;
     color: red;
-	height: 40px;
+    height: 40px;
     
 }
 
@@ -233,6 +232,13 @@ td {
   height: 50px;
   width: 50px;
   z-index: 3;
+}
+
+td img {
+    display:block;
+    width: 100%;
+    height: 50px;
+    margin: auto;
 }
 
 /* img in td tag */
