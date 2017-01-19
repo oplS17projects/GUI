@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--
+    Name: Chuong Vu
+    Email: Chuong_Vu@student.uml.edu
+    Major: Computer Science
+    School: University of Massachusetts Lowell
+    Course: 91.61 GUI Programming I
+    Date created: 9/8/2016
+    Update Date: 10/4/2016
+    Link: http://weblab.cs.uml.edu/~cvu/index.html
+    css: http://weblab.cs.uml.edu/~cvu/css/style.css
+
+    Description: Assignment 4: Styling Your First Web Page With CSS
+    This is about page, this descript about myself and my study plan in the future
+    Resouces: http://www.w3schools.com/html/default.asp 
+-->
+
+<html lang="en-US">
+    <head>
+            <title>UML - Chuong Vu</title>
+            <meta charset="UTF-8">
+            <!-- stylesheets -->
+            <link type="text/css" rel="stylesheet" href="css/style.css">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <!-- Body tag -->
+    <body>
+        <!-- Main Div -->
+        <div id='header' class="container-fluid"> 
+            <!-- header container -->
+            <div class='text-header'>
+                <div class="name-tag pad-top-50">
+                    <!-- this is first name -->
+                    <p class="fname">CHUONG</p>
+                    <!-- this is last name -->
+                    <p class="lname">VU</p>
+                </div>
+                <!-- links of social media -->
+                <a href="https://www.linkedin.com/in/chuongdvu" class="social-link social-link-alt" target="_blank"><img class="img-social"  src="img/linkedin.png" onmouseover="this.src='img/linkedin-hover.png'" onmouseout="this.src='img/linkedin.png'" alt="Linkedin"></a>
+                <a href="https://github.com/vdc1703" class="social-link social-link-alt" target="_blank"><img class="img-social" src="img/github.png" onmouseover="this.src='img/github-hover.png'" onmouseout="this.src='img/github.png'" alt="Github"></a>
+                <a href="https://www.facebook.com/vdc1712" class="social-link social-link-alt" target="_blank"><img class="img-social" src="img/facebook.png" onmouseover="this.src='img/facebook-hover.png'" onmouseout="this.src='img/facebook.png'" alt="Facebook"></a>
+                <a href="mailto:Chuong_Vu@student.uml.edu" class="social-link social-link-alt" target="_blank"><img class="img-social" src="img/email.png" onmouseover="this.src='img/email-hover.png'" onmouseout="this.src='img/email.png'" alt="Email"></a>
+                
+                <!-- not in use now at this time since I dont have a good profile picture -->
+                <!-- <div class=''> -->
+                    <!-- <img class="img-profile" src ="img/profile.png" alt="Profile Picture"> -->
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <!-- About Me -->
+        <div class="container-fluid pad-top-50 about">
+            <div class="text-center">
+                <h1>About Me</h1>
+            </div>
+            <div class="space">
+                <div class="fname">Hi,</div>
+                <p>My name is Chuong Vu, I am currently a junior at UMass Lowell but a sophomore in Computer Science. I came to the United States in 2006, went to Middlesex Community College and transferred to UMass Lowell in fall 2014. </p>
+                <p>I plan to double major in Computer Science and Information Technology since I’m interested in both fields of study.</p>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="container-fluid pad-top-10 bg-project">
+            <div class="text-center">
+                <h2>GUI Assignments</h2>
+            </div>
+
+            <div class="container-fluid text-center pad-top-10">
+                <div class="project-table container-fluid project-assignment">
+                    <div class="content-list">
+                        <h1>Hommework</h1>
+                        <!-- for all the link to class assignments -->
+                        <ul class="text-left">
+                            <li class="dropdown"><a href="HW2/index.html">Assignment 2</a>
+                                <div class="dropdown-content">
+                                   <p>Creating Your First Web Page</p>
+                                </div>
+                            </li>
+                            <li class="dropdown"><a href="HW3_source/index.html">Assignment 3</a>
+                                <div class="dropdown-content">
+                                    <p>Style a Site with External CSS</p>
+                                </div>
+                            </li>
+                            <li class="dropdown"><a href="index.html">Assignment 4</a>
+                                <div class="dropdown-content">
+                                    <p>Styling Your First Web Page With CSS</p>
+                                </div>
+                            </li>
+                            <li class="dropdown"><a href="https://vdc1703.github.io/GUI-1/index.html">Assignment 5</a>
+                                <div class="dropdown-content">
+                                    <p>Posting a Page to GitHub</p>
+                                </div>
+                            </li>
+                            <li class="dropdown"><a href="HW6/index.html">Assignment 6</a>
+                                <div class="dropdown-content">
+                                    <p>Creating an Interactive Dynamic Table</p>
+                                </div>
+                            </li>
+                            <li class="dropdown"><a href="HW7/index.html">Assignment 7</a>
+                                <div class="dropdown-content">
+                                    <p>Using the jQuery Validation Plugin with Your Dynamic Table</p>
+                                </div>
+                            </li>
+                            <li class="dropdown"><a href="HW8/index.html">Assignment 8</a>
+                                <div class="dropdown-content">
+                                    <p>Using the jQuery UI Slider and Tab Widgets</p>
+                                </div>
+                            </li>
+                            <li class="dropdown"><a href="HW9/index.html">Assignment 9</a>
+                                <div class="dropdown-content">
+                                    <p>Implementing a Bit of Scrabble with Drag-and-Drop</p>
+                                </div>
+                            </li>
+                            <li class="dropdown"><a href="HW9v2/index.html">Assignment 9 V2</a>
+                                <div class="dropdown-content">
+                                    <p>Implementing a Bit of Scrabble with Drag-and-Drop</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                   <!--  this one is for inclass excerise -->
+                    <div class="content-list">
+                        <h1>Inclass Exerise</h1>
+                        <ul class="text-left">
+                            <li><a href="inclass_9_29/index.html">EX - Inclass Excerise 09/29</a></li>
+                            <li><a href="inclass_10_6/Exercise.html">EX - Inclass Excerise 10/06</a></li>
+                            <li><a href="inclass5_11_3/example.html">EX - Inclass Excerise 11/03</a></li>
+                            <li><a href="inclass6_handout/index.html">EX - Inclass Excerise 11/15</a></li>
+                            <li><a href="inclass7_handout/index.html">EX - Inclass Excerise 12/05</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- the pictures of object like css, javascript, jquery, bootstrap -->
+                <div class='project-table project-img'>
+                    <!-- <img class='cplusplus' src='img/cplusplus.png' alt='c++'> -->
+                    <img class="html5" src="img/HTML5.png" alt="html5">
+                    <img class="css3" src="img/CSS3.png" alt="CSS3">
+                    <img class="javas" src="img/javascript.png" alt="javascript">
+                    <img class="jquery" src="img/jquery.png" alt="jquery">
+                    <img class="bootstrap" src="img/bootstrap.png" alt="bootstrap">
+                </div>
+            </div>
+        </div>  
+        <!--Display footer-->
+        <div id="footer">   
+                <p>Under Development &copy; 2016 Chuong Vu - 91.61 GUI Programming I</p>
+                <p>This page is valid 
+                    <a href="http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvdc1703.github.io%2FGUI-1%2Findex.html+&profile=css3&usermedium=all&warning=1&vextwarning=&lang=en"><img style="border:0;width:4%" src="img/valid-css.png" alt="Valid CSS!"></a> 
+                    and
+                    <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvdc1703.github.io%2FGUI-1%2Findex.html"><img style="border:0;width:4%" src="img/html5-courses.png" alt="Valid HTML5"></a>
+                    per W3C
+                </p>
+                <br>
+                <br>
+        </div>
+            <!-- <div class="clear"></div> -->
+    </body>
+
+</html>
